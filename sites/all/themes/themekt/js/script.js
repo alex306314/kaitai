@@ -21,6 +21,8 @@ Drupal.behaviors.my_custom_behavior = {
 
   }
 };
-
+  $(function(){
+    $(".myslide").cycle();
+  });
 
 })(jQuery, Drupal, this, this.document);

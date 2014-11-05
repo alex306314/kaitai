@@ -55,17 +55,6 @@
 
 <div class="banner">
     <?php print render($page['banner']); ?>
-    <div class="slide myslide"
-         data-cycle-fx="fade"
-         data-cycle-timeout="5000"
-         data-cycle-slides="> a"
-         data-cycle-easing="linear"
-        >
-        <div class="cycle-pager"></div>
-        <a href="#" style="background-image:url(images/sample.jpg)"></a>
-        <a href="#" style="background-image:url(images/sample2.jpg)"></a>
-        <a href="#" style="background-image:url(images/sample.jpg)"></a>
-    </div>
 </div>
 
 <div class="content">

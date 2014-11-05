@@ -8,113 +8,117 @@
  */
 ?>
 
-<div id="page">
 
-    <header class="header" id="header" role="banner">
-
-        <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-        <?php endif; ?>
-
-        <?php if ($site_name || $site_slogan): ?>
-            <div class="header__name-and-slogan" id="name-and-slogan">
-                <?php if ($site_name): ?>
-                    <h1 class="header__site-name" id="site-name">
-                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
-                    </h1>
-                <?php endif; ?>
-
-                <?php if ($site_slogan): ?>
-                    <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if ($secondary_menu): ?>
-            <nav class="header__secondary-menu" id="secondary-menu" role="navigation">
-                <?php print theme('links__system_secondary_menu', array(
-                    'links' => $secondary_menu,
-                    'attributes' => array(
-                        'class' => array('links', 'inline', 'clearfix'),
-                    ),
-                    'heading' => array(
-                        'text' => $secondary_menu_heading,
-                        'level' => 'h2',
-                        'class' => array('element-invisible'),
-                    ),
-                )); ?>
-            </nav>
-        <?php endif; ?>
-
-        <?php print render($page['header']); ?>
-
-    </header>
-
-    <div id="main">
-
-        <div id="content" class="column" role="main">
-            <?php print render($page['highlighted']); ?>
-            <?php print $breadcrumb; ?>
-            <a id="main-content"></a>
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
-                <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
-            <?php print $messages; ?>
-            <?php print render($tabs); ?>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?>
-                <ul class="action-links"><?php print render($action_links); ?></ul>
-            <?php endif; ?>
-            <?php print render($page['content']); ?>
-            <?php print $feed_icons; ?>
-        </div>
-
-        <div id="navigation">
-
-            <?php if ($main_menu): ?>
-                <nav id="main-menu" role="navigation" tabindex="-1">
-                    <?php
-                    // This code snippet is hard to modify. We recommend turning off the
-                    // "Main menu" on your sub-theme's settings form, deleting this PHP
-                    // code block, and, instead, using the "Menu block" module.
-                    // @see https://drupal.org/project/menu_block
-                    print theme('links__system_main_menu', array(
-                        'links' => $main_menu,
-                        'attributes' => array(
-                            'class' => array('links', 'inline', 'clearfix'),
-                        ),
-                        'heading' => array(
-                            'text' => t('Main menu'),
-                            'level' => 'h2',
-                            'class' => array('element-invisible'),
-                        ),
-                    )); ?>
-                </nav>
-            <?php endif; ?>
-
-            <?php print render($page['navigation']); ?>
-
-        </div>
-
-        <?php
-        // Render the sidebars to see if there's anything in them.
-        $sidebar_first  = render($page['sidebar_first']);
-        $sidebar_second = render($page['sidebar_second']);
-        ?>
-
-        <?php if ($sidebar_first || $sidebar_second): ?>
-            <aside class="sidebars">
-                <?php print $sidebar_first; ?>
-                <?php print $sidebar_second; ?>
-            </aside>
-        <?php endif; ?>
-
+<div class="head">
+  <div class="max_width clearfix">
+    <div class="site_name">
+      <a title="佛山文丰塑料机械有限公司" class="b" href="">佛山文丰塑料机械有限公司</a>
+      <div class="s">
+        <a target="_blank" href="">干燥机</a>
+        <a target="_blank" href="">破碎机</a>
+        <a target="_blank" href="">吸料机</a>
+        <a target="_blank" href="">模具温控机</a>
+        <a target="_blank" href="">冷水机</a>
+        <a target="_blank" href="">混色机</a>
+        <a target="_blank" href="">搅拌机</a>
+        <a target="_blank" href="">冷却水塔</a>
+        <a target="_blank" href="">机械手</a>
+      </div>
     </div>
+    <?php print render($page['header']); ?>
+  </div>
+</div>
+<div class="nav">
+  <div class="max_width">
+    <ul class="ul1">
+      <li class="li1">
+        <a class="a1 hover">网站首页</a>
+      </li>
+      <li class="li1">
+        <a class="a1">关于我们</a>
+      </li>
+      <li class="li1">
+        <a class="a1">新闻中心</a>
+      </li>
+      <li class="li1">
+        <a class="a1">产品中心</a>
+      </li>
+      <li class="li1">
+        <a class="a1">在线订购</a>
+      </li>
+      <li class="li1">
+        <a class="a1">联系我们</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
+<div class="banner">
+  <?php print render($page['banner']); ?>
+</div>
+
+<div class="content">
+  <div class="max_width clearfix">
+
+    <?php print render($page['highlighted']); ?>
+    <?php print $breadcrumb; ?>
+    <a id="main-content"></a>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+      <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php print $messages; ?>
+    <?php print render($tabs); ?>
+    <?php print render($page['help']); ?>
+    <?php if ($action_links): ?>
+      <ul class="action-links"><?php print render($action_links); ?></ul>
+    <?php endif; ?>
+    <?php print render($page['content']); ?>
+    <?php print $feed_icons; ?>
+
+
+    <div class="side">
+      <?php print render($page['navigation']); ?>
+      <?php
+      // Render the sidebars to see if there's anything in them.
+      $sidebar_first  = render($page['sidebar_first']);
+      $sidebar_second = render($page['sidebar_second']);
+      ?>
+
+      <?php if ($sidebar_first || $sidebar_second): ?>
+        <aside class="sidebars">
+          <?php print $sidebar_first; ?>
+          <?php print $sidebar_second; ?>
+        </aside>
+      <?php endif; ?>
+    </div>
+    http://www.pvc123.com/b-wenfengjixie/
+    jquery.malsup.com/cycle2/demo/non-image.php
+
+    <div style="height: 400px;"></div>
+  </div>
+</div>
+
+
+
+
+<div class="footer">
+  <div class="max_width">
+    <p>
+      <a href="about.php">关于我们</a> |
+      <a href="video.php">展示中心</a> |
+      <a href="order.php">在线订购</a> |
+      <a href="job.php">人力资源</a> |
+      <a href="link.php">友情链接</a>
+    </p>
+    <p>地址：高新技术开发区迎宾道41号  联系电话：400-000-8888</p>
+    <p>777房设备有限公司 版权所有 &nbsp;<span class="fonta">Copyright &copy; 2014 All Right Reserve</span>&nbsp;
+      <a target="_blank" href="http://www.miibeian.gov.cn">京ICP备09000000号</a>
+    </p>
+    <div class="clear"></div>
     <?php print render($page['footer']); ?>
-
+  </div>
 </div>
 
 <?php print render($page['bottom']); ?>
