@@ -1,0 +1,47 @@
+<?php
+
+
+/**
+ * hook_block_info()
+ */
+function ktmodule_block_info()
+{
+    $blocks['cycle2banner'] = array(
+        'info' => t('滚动横幅块'),
+        'cache' => DRUPAL_CACHE_PER_ROLE,
+    );
+    return $blocks;
+}
+
+function ktGetBannerData()
+{
+    //$data = db_query_range('select * from {node} n where n.type in ("front_slide_banner")',0,3);
+echo "<pre>";
+    $data = db_select('{node}','n')
+        ->fields('n')
+        ->execute()
+        ->fetchAssoc();
+    foreach($data as $n){
+        $ids[] = $n['nid'];
+    }
+    $files = file_load_multiple($ids);
+    var_dump($files);exit;
+}
+
+/**
+ * hook_block_view()
+ */
+function ktmodule_block_view($delta = '')
+{
+    $block = array();
+    $html = '<div><a>img1</a><a>img2</a></div>';
+
+    switch($delta){
+        case 'cycle2banner':
+            //ktGetBannerData();
+            $block['subject'] = t('滚动横幅');
+            $block['content'] = $html;
+    }
+
+    return $block;
+}
