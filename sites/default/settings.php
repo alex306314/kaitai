@@ -221,7 +221,7 @@ $databases = array (
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
-      'prefix' => 'kt_',
+      'prefix' => '',
     ),
   ),
 );
@@ -256,7 +256,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'sKhpNOD8ba7WTx1-j-qtuapVx6RpBwByeBzoo1N26D4';
+$drupal_hash_salt = '1b0xbf_MJBAZqIMfVGUdy9TbPa3lIQkM3Sfqf8zpocQ';
 
 /**
  * Base URL (optional).
