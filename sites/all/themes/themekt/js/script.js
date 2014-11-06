@@ -23,6 +23,14 @@ Drupal.behaviors.my_custom_behavior = {
 };
   $(function(){
     $(".myslide").cycle();
+    //畅销产品块
+    $(".sidchxicc li").hover(function(){
+      $(".sidchxicc li").removeClass("active");
+      $(this).addClass("active");
+    },function(){
+
+    });
+
   });
 
 })(jQuery, Drupal, this, this.document);
