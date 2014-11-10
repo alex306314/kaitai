@@ -1,50 +1,103 @@
 <?php
 
-include __DIR__."/funcs/blocks.php";
+include __DIR__ . "/get_data_funcs.php";
+
+/**
+ *
+ * hook_theme
+ */
+function ktmodule_theme() {
+  return array(
+    'cycle2banner' => array(//页面轮播图模板
+      'template' => "templates/banner",
+      'variables' => array('images' => null, ),
+    ),
+    'side_category' => array(
+      'template' => 'templates/side_category',
+      'variables' => array(),
+      ),
+    'side_contact' => array(
+      'template' => 'templates/side_contact',
+      'variables' => array(),
+      ),
+    'side_changxiao' => array(
+      'template' => 'templates/side_changxiao',
+      'variables' => array(),
+      ),
+    'front_tuijian' => array(
+      'template' => 'template/front_tuijian',
+      'variables' => array(),
+      ),
+  );
+}
+
 /**
  * hook_block_info()
  */
-function ktmodule_block_info()
-{
-    $blocks['cycle2banner'] = array(
-        'info' => t('滚动横幅块'),
+function ktmodule_block_info() {
+  $blocks = array(
+    'cycle2banner' => array(
+      'info' => t('滚动横幅块'),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+    ),
+    'side_category_menu' => array(
+      'info' => t('侧面产品分类'),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+    ),
+    'side_contact_method' => array(
+      'info' => t('侧面联系方式'),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
+    'side_changxiao' => array(
+        'info' => t('侧面畅销产品'),
         'cache' => DRUPAL_CACHE_PER_ROLE,
-    );
-    return $blocks;
+      ),
+    'front_tuijian' => array(
+        'info' => t('首页推荐产品块'),
+        'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
+  );
+  return $blocks;
 }
-
-
 
 /**
  * hook_block_view()
  */
-function ktmodule_block_view($delta = '')
-{
+function ktmodule_block_view($delta = '') {
   $block = array();
-  $images = ktGetBannerData();
-  $html = '<div class="slide myslide" data-cycle-fx="fade" data-cycle-timeout="5000"
-        data-cycle-slides="> a"
-       data-cycle-easing="linear"><div class="cycle-pager"></div>';
-  foreach($images as $i){
-    $html .= '<a href="'. $i['url'] .'" style="background-image:url('.$i['img'].');"></a>';
-  }
-  $html .= '</div>';
 
-  switch($delta){
-      case 'cycle2banner'://横幅模块
-        //drupal_add_js('misc/jquery-1.11.1.min.js','file');
-        drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js','file');
-        $block['subject'] = t('滚动横幅');
-        $block['content'] = $html;
+  switch ($delta) {
+    case 'cycle2banner'://横幅模块
+      drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
+      $block['subject'] = t('滚动横幅');
+      //$block['content'] = $html;
+      $block['content'] = theme('cycle2banner', array('images' => ktGetBannerData()));
+      break;
+    case 'side_category_menu': //侧面产品分类
+      $block = array(
+        'subject' => t('产品分类'),
+        'content' => theme('side_category', array()),
+      );
+      break;
+    case 'side_contact_method': //侧面联系方式
+      $block=array(
+        'subject' => t('联系方式'),
+        'content' => theme('side_contact', array()),
+        );
+      break;
+      case 'side_changxiao': //侧面畅销产品 
+        $block = array(
+            'subject' => t('畅销产品'),
+            'content' => theme('side_changxiao', array()),
+          );
+        break;
+      case 'front_tuijian':
+        $block = array(
+          'subject' => t('推荐产品'),
+          'content' => theme('front_tuijian', array()),
+          );
+        break;
   }
 
   return $block;
-}
-
-/**
- * hook_theme
- */
-function ktmodule_theme()
-{
-  return array();
 }

@@ -1,3 +1,12 @@
+.c1icon {
+  background: url("../images/c1icon.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -50em;
+  width: 10px;
+}
 .head {
   background: url(../images/top.jpg) repeat-x 0 0 transparent;
   height: 95px;
@@ -103,4 +112,161 @@
 }
 .content {
   background: url(../images/inmain.jpg) repeat-x center 0 transparent;
+}
+.pageside {
+  float: left;
+  width: 310px;
+}
+.pagecon {
+  width: 660px;
+  float: right;
+}
+.block-ktmodule {
+  background: white;
+  margin-top: 25px;
+}
+.block-ktmodule .block-title {
+  font-size: 15px;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  display: block;
+  border-bottom: 4px solid #00A779;
+  color: #333;
+  padding-left: 15px;
+}
+.block-ktmodule .c {
+  border: 1px solid #d9d9d9;
+  border-top: 0;
+  width: 308px;
+}
+.block-ktmodule .c ul {
+  display: block;
+}
+.block-ktmodule .c li {
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 10px 0 14px;
+  width: 284px;
+  overflow: hidden;
+  border-bottom: 1px dotted #d9d9d9;
+  color: #696969;
+}
+.block-ktmodule .c li a {
+  color: #696969;
+  font-size: 12px;
+  display: block;
+}
+.block-ktmodule .c li:hover {
+  background: #820509;
+  color: white;
+  font-weight: bold;
+}
+.block-ktmodule .c li:hover a {
+  color: white;
+  font-weight: bold;
+}
+.block-ktmodule .c li:last-child {
+  border-bottom: 0;
+}
+.block-ktmodule .sidchxicc .s2 {
+  display: none;
+}
+.block-ktmodule .sidchxicc .active {
+  position: relative;
+  height: 116px;
+  line-height: 20px;
+  border-bottom-style: solid;
+  background: #f2f2f2;
+}
+.block-ktmodule .sidchxicc .active .s1 {
+  display: none;
+}
+.block-ktmodule .sidchxicc .active .s2 {
+  display: block;
+}
+.block-ktmodule .sidchxicc .active .num {
+  height: 19px;
+  width: 19px;
+  line-height: 19px;
+  position: absolute;
+  margin: 0;
+  top: 13px;
+  left: 13px;
+  background: #00a779;
+}
+.block-ktmodule .sidchxicc .num {
+  display: block;
+  float: left;
+  margin: 13px 6px 0 0;
+  height: 15px;
+  width: 15px;
+  font-family: "arial";
+  text-align: center;
+  line-height: 15px;
+  color: white;
+  background: #ff8e00;
+}
+.block-ktmodule .sidchxicc img {
+  display: block;
+  float: left;
+  height: 71px;
+  width: 95px;
+  margin: 15px 0 0 1px;
+}
+.block-ktmodule .sidchxicc .tp {
+  color: #ff4e00;
+  float: left;
+  height: 74px;
+  margin: 15px 0 0 15px;
+  width: 165px;
+}
+.block-ktmodule .sidchxicc .tp a {
+  display: block;
+  float: left;
+  height: 40px;
+  overflow: hidden;
+  width: 100%;
+}
+.block-ktmodule .sidchxicc .tp span {
+  display: block;
+  float: left;
+  margin-top: 14px;
+}
+.search_box {
+  background: #f2f2f2;
+  height: 69px;
+  float: left;
+  width: 100%;
+}
+.search_box .s {
+  margin: 20px 0 0 20px;
+  width: 260px;
+  border: 1px solid #d9d9d9;
+  background: white;
+  height: 28px;
+  position: relative;
+}
+.search_box .s input {
+  background: transparent;
+  border: 0;
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 7px 10px;
+  width: 235px;
+}
+.search_box .s .btn_form_search {
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 7px;
+  right: 10px;
+  cursor: pointer;
+  background-position: -90px -35px;
+}
+#block-ktmodule-cycle2banner {
+  margin: 0;
 }
