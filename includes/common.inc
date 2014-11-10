@@ -7847,6 +7847,7 @@ function entity_get_controller($entity_type) {
     $class = $type_info['controller class'];
     $controllers[$entity_type] = new $class($entity_type);
   }
+
   return $controllers[$entity_type];
 }
 
