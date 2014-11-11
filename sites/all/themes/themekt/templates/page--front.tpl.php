@@ -52,45 +52,26 @@
         </ul>
     </div>
 </div>
-
+<?php
+// Render the sidebars to see if there's anything in them.
+$sidebar_first  = render($page['sidebar_first']);
+$sidebar_second = render($page['sidebar_second']);
+?>
 <div class="banner">
     <?php print render($page['banner']); ?>
 </div>
 
 <div class="content">
     <div class="max_width clearfix">
-
-        <div class="pagecon">
-            <?php print render($page['highlighted']); ?>
-            <?php print $breadcrumb; ?>
-            <a id="main-content"></a>
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
-                <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
-            <?php print $messages; ?>
-            <?php print render($tabs); ?>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?>
-                <ul class="action-links"><?php print render($action_links); ?></ul>
-            <?php endif; ?>
-            <?php print render($page['content']); ?>
-            <?php print $feed_icons; ?>
-
-            http://www.pvc123.com/b-wenfengjixie/
-            jquery.malsup.com/cycle2/demo/non-image.php
-
-            <div style="height: 400px;"></div>
+        <div class="highliw"><?php print render($page['highlighted']); ?></div>
+        <div class="pagecon front">
+          <?php if ($sidebar_second): ?>
+            <?php print $sidebar_second; ?>
+          <?php endif; ?>
         </div>
     
         <div class="pageside">
             <?php print render($page['navigation']); ?>
-            <?php
-            // Render the sidebars to see if there's anything in them.
-            $sidebar_first  = render($page['sidebar_first']);
-            $sidebar_second = render($page['sidebar_second']);
-            ?>
 
             <?php if ($sidebar_first): ?>
                 <?php print $sidebar_first; ?>
@@ -99,9 +80,6 @@
         
     </div>
 </div>
-
-
-
 
 <div class="footer">
     <div class="max_width">
