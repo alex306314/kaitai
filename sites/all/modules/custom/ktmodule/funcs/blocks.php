@@ -6,6 +6,7 @@
  */
 function ktGetBannerData()
 {
+    
     //echo "<pre>";
     $query = db_select('{node}','n');
     $query->leftJoin('{field_data_field_image}', 'i', 'i.entity_id=n.nid');

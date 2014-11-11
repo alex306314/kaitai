@@ -7,30 +7,32 @@
 function ktGetBannerData()
 {
   //echo "<pre>";
-  $query = db_select('{node}','n');
-  $query->leftJoin('{field_data_field_image}', 'i', 'i.entity_id=n.nid');
-  $query->leftJoin('{field_data_field_url_to}', 'url', 'url.entity_id=n.nid');
-  $query->leftJoin('{file_managed}', 'f', 'f.fid=i.field_image_fid');
-  $query->fields('i');
-  $query->fields('n');
-  $query->fields('url');
-  $query->fields('f');
-  $query->condition('n.type','front_slide_banner', '=');
-  $query->range(0,10);
-  $data = $query->execute();
-       // ->fetchAssoc();
+  $nids = array();
   $images = array();
-  foreach($data as $d){
-    //var_dump($d);
+
+  $query = new EntityFieldQuery();
+  $entities = $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('type', 'front_slide_banner');
+  $nodes = $entities->execute();
+  foreach($nodes['node'] as $k=>$v){
+    $nids[] = $v->nid;
+  }
+
+  $nodesData = node_load_multiple($nids);
+  foreach($nodesData as $n){
+    $imgItem = field_get_items('node',$n,'field_image');
+    $urlItem = field_get_items('node', $n, 'field_url_to');
+    $bodyItem = field_get_items('node', $n, 'body');
+    //var_dump($urlItem);
     $images[] = array(
-      'nid' => $d->nid,
-      'title' => $d->title,
-      'img' => file_create_url($d->uri),
-      'url' => isset($d->field_url_to_value)?$d->field_url_to_value:'#',
+      'nid' => $n->nid,
+      'title' => $n->title,
+      'img' => file_create_url($imgItem[0]['uri']),
+      'url' =>$urlItem[0]['safe_value'],
+      'des' => $bodyItem[0]['safe_value'],
     );
-  };
+  }
   //exit;
-    //$files = file_load_multiple($ids);
-    //var_dump($images);exit;
   return $images;
+
 }
