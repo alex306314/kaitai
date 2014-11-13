@@ -23,7 +23,7 @@ function ktGetBannerData()
     $imgItem = field_get_items('node',$n,'field_image');
     $urlItem = field_get_items('node', $n, 'field_url_to');
     $bodyItem = field_get_items('node', $n, 'body');
-    //var_dump($urlItem);
+
     $images[] = array(
       'nid' => $n->nid,
       'title' => $n->title,

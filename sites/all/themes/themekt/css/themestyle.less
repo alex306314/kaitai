@@ -1,4 +1,4 @@
-@hover_color:#850207;
+@hover_color:#E21D2E;
 
 .c1icon{
   background: url("../images/c1icon.png") no-repeat scroll 0 0 transparent;
@@ -34,9 +34,9 @@
 .nav{
   background: url(../images/nav.jpg) repeat-x 0 0 transparent;
   height: 45px;
-  ul{
+  .menu{
     display: block;
-    li{
+    .menu__item{
       display: block;
       a{
         display: block;
@@ -44,7 +44,7 @@
       }
     }
   }
-  .li1{
+  .menu__item{
     float:left;
     a{
       font-size: 14px;
@@ -54,7 +54,7 @@
       width:111px;
       margin-right: 5px;
       cursor:pointer;
-      &.hover,
+      &.active,
       &:hover{
         background: url("../images/nava.jpg") no-repeat center bottom transparent;
       }
@@ -159,7 +159,7 @@
         display: block;
       }
       &:hover{
-        background: #820509;
+        background: @hover_color;
         color:white;
         font-weight: bold;
         a{
@@ -274,4 +274,53 @@
 }
 #block-ktmodule-cycle2banner{
   margin:0;
+}
+.pagecon{
+  .block-ktmodule{
+    .c{
+      width: auto;
+    }
+  }
+}
+.tjslide{
+  height: 380px;
+  overflow: hidden;
+  margin: 20px 0;
+  float:left;
+  .item{
+    float:left;
+    width:182px;
+    margin-left: 28px;
+    a{
+      display: block;
+      width:182px;
+      float:left;
+      color:#696969;
+      margin-bottom: 10px;
+      &:hover{
+        background: @hover_color;
+        .imgt{
+          color:white;
+        }
+      }
+    }
+    .imgw{
+      display: block;
+      width: 162px;
+      height: 122px;
+      margin:10px 0 0 10px;
+      img{
+        width:162px;
+        height: 122px;
+      }
+    }
+    .imgt{
+      display: block;
+      padding:10px 20px;
+      height: 32px;
+      line-height: 16px;
+      text-align: center;
+      overflow: hidden;
+    }
+  }
 }

@@ -30,7 +30,8 @@
 </div>
 <div class="nav">
     <div class="max_width">
-        <ul class="ul1">
+    <?php print render($page['navigation']); ?>
+        <!--ul class="ul1">
             <li class="li1">
                 <a class="a1 hover">网站首页</a>
             </li>
@@ -49,7 +50,7 @@
             <li class="li1">
                 <a class="a1">联系我们</a>
             </li>
-        </ul>
+        </ul-->
     </div>
 </div>
 <?php
@@ -66,13 +67,11 @@ $sidebar_second = render($page['sidebar_second']);
         <div class="highliw"><?php print render($page['highlighted']); ?></div>
         <div class="pagecon front">
           <?php if ($sidebar_second): ?>
-            <?php print $sidebar_second; ?>
-          <?php endif; ?>
+                <?php print $sidebar_second; ?>
+            <?php endif; ?>
         </div>
     
         <div class="pageside">
-            <?php print render($page['navigation']); ?>
-
             <?php if ($sidebar_first): ?>
                 <?php print $sidebar_first; ?>
             <?php endif; ?>

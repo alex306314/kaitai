@@ -24,8 +24,8 @@ function ktmodule_theme() {
       'template' => 'templates/side_changxiao',
       'variables' => array(),
       ),
-    'front_tuijian' => array(
-      'template' => 'template/front_tuijian',
+    'frt_tuijian' => array(
+      'template' => 'templates/frt_tuijian',
       'variables' => array(),
       ),
   );
@@ -52,7 +52,7 @@ function ktmodule_block_info() {
         'info' => t('侧面畅销产品'),
         'cache' => DRUPAL_CACHE_PER_ROLE,
       ),
-    'front_tuijian' => array(
+    'frt_tuijian' => array(
         'info' => t('首页推荐产品块'),
         'cache' => DRUPAL_CACHE_PER_ROLE,
       ),
@@ -85,18 +85,18 @@ function ktmodule_block_view($delta = '') {
         'content' => theme('side_contact', array()),
         );
       break;
-      case 'side_changxiao': //侧面畅销产品 
-        $block = array(
-            'subject' => t('畅销产品'),
-            'content' => theme('side_changxiao', array()),
-          );
-        break;
-      case 'front_tuijian':
-        $block = array(
-          'subject' => t('推荐产品'),
-          'content' => theme('front_tuijian', array()),
-          );
-        break;
+    case 'side_changxiao': //侧面畅销产品
+      $block = array(
+          'subject' => t('畅销产品'),
+          'content' => theme('side_changxiao', array()),
+        );
+      break;
+    case 'frt_tuijian':
+      $block = array(
+        'subject' => t('推荐产品'),
+        'content' => theme('frt_tuijian', array()),
+        );
+      break;
   }
 
   return $block;

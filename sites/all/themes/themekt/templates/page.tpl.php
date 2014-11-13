@@ -30,26 +30,7 @@
 </div>
 <div class="nav">
   <div class="max_width">
-    <ul class="ul1">
-      <li class="li1">
-        <a class="a1 hover">网站首页</a>
-      </li>
-      <li class="li1">
-        <a class="a1">关于我们</a>
-      </li>
-      <li class="li1">
-        <a class="a1">新闻中心</a>
-      </li>
-      <li class="li1">
-        <a class="a1">产品中心</a>
-      </li>
-      <li class="li1">
-        <a class="a1">在线订购</a>
-      </li>
-      <li class="li1">
-        <a class="a1">联系我们</a>
-      </li>
-    </ul>
+    <?php print render($page['navigation']); ?>
   </div>
 </div>
 
@@ -81,7 +62,6 @@
     </div>
 
     <div class="pageside">
-      <?php print render($page['navigation']); ?>
       <?php
       // Render the sidebars to see if there's anything in them.
       $sidebar_first  = render($page['sidebar_first']);
