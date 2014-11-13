@@ -28,6 +28,10 @@ function ktmodule_theme() {
       'template' => 'templates/frt_tuijian',
       'variables' => array(),
       ),
+    'com_introduction' => array(
+      'template' => 'templates/com_introduction',
+      'variables' => array('content'=>null),
+      ),
   );
 }
 
@@ -55,6 +59,10 @@ function ktmodule_block_info() {
     'frt_tuijian' => array(
         'info' => t('首页推荐产品块'),
         'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
+    'com_introduction' => array(
+      'info' => t("公司介绍"),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
       ),
   );
   return $blocks;
@@ -95,6 +103,14 @@ function ktmodule_block_view($delta = '') {
       $block = array(
         'subject' => t('推荐产品'),
         'content' => theme('frt_tuijian', array()),
+        );
+      break;
+    case 'com_introduction':
+      $node = node_load(9);
+      $contentItem = field_get_items('node', $node, 'body');
+      $block = array(
+        'subject' => t('公司介绍'),
+        'content' => theme('com_introduction', array('content'=>$contentItem[0]['safe_value'])),
         );
       break;
   }

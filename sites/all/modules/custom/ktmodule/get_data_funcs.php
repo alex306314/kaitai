@@ -36,3 +36,5 @@ function ktGetBannerData()
   return $images;
 
 }
+
+
