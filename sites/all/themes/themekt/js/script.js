@@ -31,6 +31,7 @@ Drupal.behaviors.my_custom_behavior = {
 
     });
 
-  });
+
+  });//document ready
 
 })(jQuery, Drupal, this, this.document);

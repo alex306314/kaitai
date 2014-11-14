@@ -32,6 +32,14 @@ function ktmodule_theme() {
       'template' => 'templates/com_introduction',
       'variables' => array('content'=>null),
       ),
+    'com_zuixingongying' => array(
+      'template' => 'templates/com_zuixingongying',
+      'variables' => array(),
+      ),
+    'friend_link' => array(
+      'template' => 'templates/friend_link',
+      'variables' => array(),
+      ),
   );
 }
 
@@ -64,6 +72,15 @@ function ktmodule_block_info() {
       'info' => t("公司介绍"),
       'cache' => DRUPAL_CACHE_PER_ROLE,
       ),
+    'com_zuixingongying' => array(
+      'info' => t("最新供应"),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
+    'friend_link' => array(
+      'info' => t("友情链接"),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
+
   );
   return $blocks;
 }
@@ -107,10 +124,26 @@ function ktmodule_block_view($delta = '') {
       break;
     case 'com_introduction':
       $node = node_load(9);
-      $contentItem = field_get_items('node', $node, 'body');
+      $contentItem = field_get_items('node', $node, 'body'); 
+      $con = $contentItem[0]['safe_value'];
+      $imgItem = field_get_items('node', $node, 'field_image');
+      //$imgUrl = image_style_url();
+      $imgUrl = file_create_url($imgItem[0]['uri']);
       $block = array(
         'subject' => t('公司介绍'),
-        'content' => theme('com_introduction', array('content'=>$contentItem[0]['safe_value'])),
+        'content' => theme('com_introduction', array('content'=>$con, 'imgUrl'=>$imgUrl)),
+        );
+      break;
+    case 'com_zuixingongying':
+      $block = array(
+        'subject' => t('最新供应'),
+        'content' => theme('com_zuixingongying', array()),
+        );
+      break;
+    case 'friend_link':
+      $block = array(
+        'subject' => t("友情链接"),
+        'content' => theme('friend_link', array()),
         );
       break;
   }

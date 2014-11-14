@@ -80,6 +80,12 @@ $sidebar_second = render($page['sidebar_second']);
     </div>
 </div>
 
+<div class="footertop">
+    <div class="max_width">
+        <?php print render($page['footer_top']); ?>
+    </div>
+</div>
+
 <div class="footer">
     <div class="max_width">
         <p>
