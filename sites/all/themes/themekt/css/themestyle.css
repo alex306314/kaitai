@@ -440,3 +440,49 @@
   height: 326px;
   overflow: hidden;
 }
+.messages {
+  border-radius: 4px;
+  margin: 15px 0 0 0;
+  padding: 15px;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  color: #8a6d3b;
+  clear: both;
+  line-height: 16px;
+}
+.pager {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+.pager li {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #dddddd;
+  color: #428bca;
+  line-height: 1.42857;
+  margin: 0 -3px;
+}
+.pager li a {
+  display: block;
+  color: #428bca;
+  line-height: 1.42857;
+  position: relative;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+.pager li.pager-current {
+  padding: 6px 12px;
+  background-color: #428bca;
+  border-color: #428bca;
+  color: white;
+}
+.pager li.pager-ellipsis {
+  padding: 6px 12px;
+}
+.content {
+  width: 100%;
+  float: left;
+}

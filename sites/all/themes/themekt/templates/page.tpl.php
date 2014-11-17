@@ -37,52 +37,48 @@
 <div class="banner">
   <?php print render($page['banner']); ?>
 </div>
-
+<div class="clear"></div>
 <div class="content">
   <div class="max_width clearfix">
-
     <?php print render($page['highlighted']); ?>
-    
+    <?php print $messages; ?>
+
     <div class="pagecon front">
-      <?php print $breadcrumb; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+      <div class="block-ktmodule">
+        <?php if ($title): ?>
+          <h2 class="block__title page__title block-title"><?php print $title; ?></h2>
+        <?php endif; ?>
+        <div class="cwrap clearfix">
+          <?php print render($tabs); ?>
+          <?php print render($page['content']); ?>
+        </div>
+      </div>
     </div>
 
     <div class="pageside">
       <?php
       // Render the sidebars to see if there's anything in them.
       $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
       ?>
 
-      <?php if ($sidebar_first || $sidebar_second): ?>
+      <?php if ($sidebar_first): ?>
         <aside class="sidebars">
           <?php print $sidebar_first; ?>
-          <?php print $sidebar_second; ?>
         </aside>
       <?php endif; ?>
     </div>
 
-    <div style="height: 400px;"></div>
   </div>
 </div>
 
 
 
-
+<div class="clear"></div>
+<div class="footertop">
+    <div class="max_width">
+        <?php print render($page['footer_top']); ?>
+    </div>
+</div>
 <div class="footer">
   <div class="max_width">
     <p>

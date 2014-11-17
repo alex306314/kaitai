@@ -37,4 +37,19 @@ function ktGetBannerData()
 
 }
 
+/**
+ * 获取产品分类列表
+ */
+function kt_side_category_menu()
+{
+  $cats = array();
+  //echo "<pre>";
+  $tax = taxonomy_get_tree(2,0,2);
+
+  //var_dump($tax);exit;
+  return array(
+    'cats' => $tax,
+    );
+}
+
 

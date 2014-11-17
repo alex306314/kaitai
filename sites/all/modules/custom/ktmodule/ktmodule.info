@@ -3,3 +3,5 @@ description = 自定义模块.
 package = custom
 core = 7.x
 php = 5.2
+
+files[] = ktmodule.pages.inc

@@ -1,17 +1,12 @@
 <div class="c procatecc clearfix">
   <ul>
-    <li>
-      <a href="#">-默认分类</a>
+    <?php foreach($cats as $k=>$c){ ?>
+    <li data-k="<?php echo $k; ?>">
+      <a href="#">-<?php echo $c->name; ?></a>
     </li>
-    <li>
-      <a href="#">-工业冷水机系列</a>
-    </li>
-    <li>
-      <a href="#">-塑料破碎机系列</a>
-    </li>
-    <li>
-      <a href="#">-塑料干燥机系列</a>
-    </li>
+    <?php 
+    if($k>6) break;
+    } ?>
   </ul>
   <div class="search_box">
     <form class="side_form" method="get" action="#">

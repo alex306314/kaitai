@@ -31,26 +31,6 @@
 <div class="nav">
     <div class="max_width">
     <?php print render($page['navigation']); ?>
-        <!--ul class="ul1">
-            <li class="li1">
-                <a class="a1 hover">网站首页</a>
-            </li>
-            <li class="li1">
-                <a class="a1">企业资讯</a>
-            </li>
-            <li class="li1">
-                <a class="a1">产品展示</a>
-            </li>
-            <li class="li1">
-                <a class="a1">项目案例</a>
-            </li>
-            <li class="li1">
-                <a class="a1">知识库</a>
-            </li>
-            <li class="li1">
-                <a class="a1">联系我们</a>
-            </li>
-        </ul-->
     </div>
 </div>
 <?php

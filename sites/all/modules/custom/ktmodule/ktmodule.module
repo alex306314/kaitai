@@ -1,46 +1,24 @@
 <?php
 
+
 include __DIR__ . "/get_data_funcs.php";
+
+
+/**
+ * hook_menu
+ */
+function ktmodule_menu()
+{
+  return include __DIR__. "/hooks/ktmenu_define.php";
+}
+
 
 /**
  *
  * hook_theme
  */
 function ktmodule_theme() {
-  return array(
-    'cycle2banner' => array(//页面轮播图模板
-      'template' => "templates/banner",
-      'variables' => array('images' => null, ),
-    ),
-    'side_category' => array(
-      'template' => 'templates/side_category',
-      'variables' => array(),
-      ),
-    'side_contact' => array(
-      'template' => 'templates/side_contact',
-      'variables' => array(),
-      ),
-    'side_changxiao' => array(
-      'template' => 'templates/side_changxiao',
-      'variables' => array(),
-      ),
-    'frt_tuijian' => array(
-      'template' => 'templates/frt_tuijian',
-      'variables' => array(),
-      ),
-    'com_introduction' => array(
-      'template' => 'templates/com_introduction',
-      'variables' => array('content'=>null),
-      ),
-    'com_zuixingongying' => array(
-      'template' => 'templates/com_zuixingongying',
-      'variables' => array(),
-      ),
-    'friend_link' => array(
-      'template' => 'templates/friend_link',
-      'variables' => array(),
-      ),
-  );
+  return include __DIR__. "/hooks/kttheme_define.php";
 }
 
 /**
@@ -99,9 +77,10 @@ function ktmodule_block_view($delta = '') {
       $block['content'] = theme('cycle2banner', array('images' => ktGetBannerData()));
       break;
     case 'side_category_menu': //侧面产品分类
+      $data = kt_side_category_menu();
       $block = array(
         'subject' => t('产品分类'),
-        'content' => theme('side_category', array()),
+        'content' => theme('side_category', $data),
       );
       break;
     case 'side_contact_method': //侧面联系方式
@@ -127,8 +106,7 @@ function ktmodule_block_view($delta = '') {
       $contentItem = field_get_items('node', $node, 'body'); 
       $con = $contentItem[0]['safe_value'];
       $imgItem = field_get_items('node', $node, 'field_image');
-      //$imgUrl = image_style_url();
-      $imgUrl = file_create_url($imgItem[0]['uri']);
+      $imgUrl = image_style_url("com_introduce", $imgItem[0]['uri']);
       $block = array(
         'subject' => t('公司介绍'),
         'content' => theme('com_introduction', array('content'=>$con, 'imgUrl'=>$imgUrl)),
