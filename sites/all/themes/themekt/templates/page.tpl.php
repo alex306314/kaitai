@@ -27,7 +27,7 @@
     </div>
     <?php print render($page['header']); ?>
   </div>
-</div>
+</div> 
 <div class="nav">
   <div class="max_width">
     <?php print render($page['navigation']); ?>
