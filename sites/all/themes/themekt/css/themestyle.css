@@ -486,3 +486,39 @@
   width: 100%;
   float: left;
 }
+.contopw {
+  width: 100%;
+  float: left;
+}
+.banner_gonggao {
+  border: 1px solid gainsboro;
+  height: 52px;
+}
+.banner_gonggao .ti {
+  float: left;
+  height: 18px;
+  margin-top: 17px;
+  width: 38px;
+  background: url("../images/c1icon.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  text-indent: -50em;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.ggslide {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+  width: 910px;
+  margin-left: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.ggslide a {
+  color: #28374d;
+  display: block;
+  height: 52px;
+  line-height: 52px;
+  width: 910px;
+  padding-right: 200px;
+}

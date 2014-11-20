@@ -121,3 +121,10 @@ More about developing:
    http://drupal.org/best-practices
  * Refer to the API documentation:
    http://api.drupal.org/api/drupal/7
+
+
+git add -A  缓存改动
+git commit -m "提交信息"  提交改动到本地版本库
+git push origin master   推送本地改动到origin服务器的master分支
+
+git pull origin master   拉取origin服务器的master分支合并到本地

@@ -37,4 +37,8 @@ return array(
     'template' => 'templates/product_list',
     'variables' => array(),
     ),
+  'banner_gonggao' => array(
+    'template' => 'templates/banner_gonggao',
+    'variables' => array(),
+    ),
 );

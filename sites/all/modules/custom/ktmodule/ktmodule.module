@@ -58,6 +58,10 @@ function ktmodule_block_info() {
       'info' => t("友情链接"),
       'cache' => DRUPAL_CACHE_PER_ROLE,
       ),
+    'banner_gonggao' => array(
+      'info' => t('网站公告'),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+      ),
 
   );
   return $blocks;
@@ -71,7 +75,7 @@ function ktmodule_block_view($delta = '') {
 
   switch ($delta) {
     case 'cycle2banner'://横幅模块
-      drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
+      
       $block['subject'] = t('滚动横幅');
       //$block['content'] = $html;
       $block['content'] = theme('cycle2banner', array('images' => ktGetBannerData()));
@@ -122,6 +126,12 @@ function ktmodule_block_view($delta = '') {
       $block = array(
         'subject' => t("友情链接"),
         'content' => theme('friend_link', array()),
+        );
+      break;
+    case 'banner_gonggao':
+      $block = array(
+        'subject' => t("网站公告"),
+        'content' => theme('banner_gonggao', array()),
         );
       break;
   }

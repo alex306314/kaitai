@@ -89,6 +89,7 @@ scripts[] = js/script.js
 
 regions[header]         = Header
 regions[banner]         = Banner
+regions[contopw]        = Content top
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
 regions[help]           = Help
@@ -98,6 +99,7 @@ regions[sidebar_second] = Second sidebar
 regions[footer_top]     = Footer top
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
+
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for

@@ -45,21 +45,21 @@ $sidebar_second = render($page['sidebar_second']);
 <div class="content">
     <div class="max_width clearfix">
         <div class="highliw"><?php print render($page['highlighted']); ?></div>
+        <div class="contopw"><?php print render($page['contopw']); ?></div>
+        <div class="clear"></div>
         <div class="pagecon front">
           <?php if ($sidebar_second): ?>
                 <?php print $sidebar_second; ?>
             <?php endif; ?>
         </div>
-    
         <div class="pageside">
             <?php if ($sidebar_first): ?>
                 <?php print $sidebar_first; ?>
             <?php endif; ?>
         </div>
-        
     </div>
 </div>
-
+<div class="clear"></div>
 <div class="footertop">
     <div class="max_width">
         <?php print render($page['footer_top']); ?>
@@ -83,5 +83,4 @@ $sidebar_second = render($page['sidebar_second']);
         <?php print render($page['footer']); ?>
     </div>
 </div>
-
 <?php print render($page['bottom']); ?>

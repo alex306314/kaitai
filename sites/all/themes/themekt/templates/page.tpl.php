@@ -42,6 +42,8 @@
   <div class="max_width clearfix">
     <?php print render($page['highlighted']); ?>
     <?php print $messages; ?>
+    <div class="contopw"><?php print render($page['contopw']); ?></div>
+    <div class="clear"></div>
 
     <div class="pagecon front">
       <div class="block-ktmodule">
@@ -62,9 +64,9 @@
       ?>
 
       <?php if ($sidebar_first): ?>
-        <aside class="sidebars">
+        <div class="sidebars">
           <?php print $sidebar_first; ?>
-        </aside>
+        </div>
       <?php endif; ?>
     </div>
 

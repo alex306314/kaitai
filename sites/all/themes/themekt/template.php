@@ -52,9 +52,10 @@ function themekt_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function themekt_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  //$variables['sample_variable'] = t('Lorem ipsum.');
+  drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
+  //drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
 }
 // */
 
