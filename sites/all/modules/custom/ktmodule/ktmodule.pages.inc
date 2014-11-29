@@ -15,6 +15,7 @@ function kt_get_news()
  */
 function kt_get_products($a='')
 {
+
   //var_dump($a);exit;
   $type = $a=='' ? -1 : substr($a, 0, 1);
   $id = substr($a,1);
@@ -26,6 +27,9 @@ function kt_get_products($a='')
 
 
   if($type == 'n'){ //显示指定产品
+    $node = node_load($id);
+    echo "<pre>";
+    var_dump($node);exit;
     $data = array(
       'nid' => $id,
     );

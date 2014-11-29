@@ -1,4 +1,10 @@
 # Ignore configuration files that may contain sensitive information.
-/.idea
-/sites/default/files/product_images/*
-/sites/default/files/styles/*
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+sites/default/ctools/*
+sites/default/product_images/*
+sites/default/styles/*
+.idea/*
