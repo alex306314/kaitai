@@ -1,10 +1,10 @@
-KaiTai
-======
+KaiTai TEST WEBSITE
+===
 
 Company test website, just fo testing, all functionality write in module ktmodule (sites/all/modules/custom/ktmodule).
 
 The main menu
-====
+---
 
 * 网站首页
 * 企业资讯
