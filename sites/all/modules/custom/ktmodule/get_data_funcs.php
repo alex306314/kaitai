@@ -14,9 +14,10 @@ function ktGetBannerData()
   $entities = $query->entityCondition('entity_type', 'node')
     ->propertyCondition('type', 'front_slide_banner');
   $nodes = $entities->execute();
-  foreach($nodes['node'] as $k=>$v){
-    $nids[] = $v->nid;
-  }
+//  foreach($nodes['node'] as $k=>$v){
+//    $nids[] = $v->nid;
+//  }
+  $nids = array_keys($nodes['node']);
 
   $nodesData = node_load_multiple($nids);
   foreach($nodesData as $n){
@@ -34,7 +35,6 @@ function ktGetBannerData()
   }
   //exit;
   return $images;
-
 }
 
 /**

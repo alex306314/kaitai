@@ -11,15 +11,22 @@ $items['news'] = array(
   'file' => 'ktmodule.pages.inc',
 );
 
-
 $items['products'] = array(
   'title' => '供应产品',
   'page callback' => 'kt_get_products',
-  'page arguments' => array(1,2,3),
   'access arguments' => array('access content'),
   'type' => MENU_NORMAL_ITEM,
   'menu_name' => 'main-menu',
   'weight' => 2,
+  'file' => 'ktmodule.pages.inc',
+);
+
+$items['products/%'] = array(
+  'title' => '供应产品',
+  'page callback' => 'kt_get_products',
+  'page arguments' => array(1),
+  'access arguments' => array('access content'),
+  'type' => MENU_LOCAL_TASK,
   'file' => 'ktmodule.pages.inc',
 );
 

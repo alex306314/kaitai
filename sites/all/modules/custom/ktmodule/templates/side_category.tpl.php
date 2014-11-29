@@ -2,7 +2,7 @@
   <ul>
     <?php foreach($cats as $k=>$c){ ?>
     <li data-k="<?php echo $k; ?>">
-      <a href="#">-<?php echo $c->name; ?></a>
+      <?php echo l('-'.$c->name, 'products/c' . $c->tid); ?>
     </li>
     <?php 
     if($k>6) break;

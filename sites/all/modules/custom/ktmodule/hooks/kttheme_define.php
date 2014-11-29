@@ -37,6 +37,10 @@ return array(
     'template' => 'templates/product_list',
     'variables' => array(),
     ),
+  'product_detail' => array(
+    'template' => 'templates/product_detail',
+    'variables' => array(),
+  ),
   'banner_gonggao' => array(
     'template' => 'templates/banner_gonggao',
     'variables' => array(),
