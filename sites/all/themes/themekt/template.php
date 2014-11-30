@@ -55,6 +55,7 @@ function themekt_preprocess_html(&$variables, $hook) {
 function themekt_preprocess_page(&$variables, $hook) {
   //$variables['sample_variable'] = t('Lorem ipsum.');
   drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
+  drupal_add_js("sites/all/libraries/jquery.cycle/jquery.cycle2.carousel.js", 'file');
   //drupal_add_js('sites/all/libraries/jquery.cycle/jquery.cycle2.min.js', 'file');
 }
 // */

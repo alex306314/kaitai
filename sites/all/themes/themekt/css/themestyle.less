@@ -535,3 +535,163 @@
     width:910px;
   }
 }
+.prodetailb{
+  .l{
+    float:left;
+    width: 260px;
+    margin:30px 0 0 30px;
+  }
+  .s1{
+    width:260px;
+    height: 196px;
+    position: relative;
+    .cycle-slide{
+      width:260px;
+      height: 196px;
+    }
+    &.hover{
+      .movehover{
+        display: block;
+      }
+      .hoverbig{
+        display: block;
+      }
+    }
+  }
+  .movehover{
+    position: absolute;
+    width:50px;
+    height: 50px;
+    border:1px dashed #000;
+    top:10px;
+    left:10px;
+    background: #555;
+    opacity: 0.5;
+    z-index: 1000;
+    display: none;
+  }
+  .hoverbig{
+    position: absolute;
+    width: 350px;
+    height: 260px;
+    top:0;
+    right: -360px;
+    border:1px solid #ccc;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+    img{
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+  }
+  .r{
+    float:left;
+    width: 300px;
+    margin:30px 0 0 30px;
+  }
+}
+.cycle-slideshow1{
+  width: 260px;
+  height: 196px;
+  overflow: hidden;
+  img{
+    width: 260px;
+    height: 196px;
+  }
+}
+#slideshow-2{
+  width:260px;
+  height: 54px;
+  margin-top:10px;
+  .cyclside2w{
+    width: 223px;
+    height: 56px;
+    overflow: hidden;
+    float:left;
+    margin-top:-1px;
+  }
+  .cycle-slideshow1{
+    width: 223px;
+    height: 56px;
+    overflow: hidden;
+    float:left;
+    div{
+      width: 72px;
+      height: 53px;
+      border:1px solid transparent;
+      img{
+        width: 72px;
+        height: 53px;
+      }
+      &.cycle-slide-active{
+        border-color:@hover_color;
+      }
+    }
+  }
+  .ctl{
+    display: block;
+    float:left;
+    width: 18px;
+    height: 54px;
+    background: #8f8f8f;
+    color: white;
+    text-align: center;
+    line-height: 54px;
+    &:hover{
+      color:@hover_color;
+    }
+  }
+  .cycle-next{
+    float:right;
+  }
+}
+.prodedes{
+  td{
+    height: 22px;
+    font-size: 12px;
+    color:#333;
+    padding-left: 10px;
+  }
+  .pt{
+    text-align: right;
+    padding:0;
+  }
+}
+.nxtpre{
+  float:left;
+  margin:24px 0 0 60px;
+  .i{
+    background-color: #51b600;
+    color: white;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 23px;
+    line-height: 23px;
+    margin-right: 10px;
+    position: relative;
+    text-align: center;
+    width: 76px
+  }
+  .c1icon{
+    background-position: -190px -75px;
+    height: 23px;
+    position: absolute;
+    top: 0;
+    width: 7px;
+  }
+  .pre{
+    .c1icon{
+      left:-7px;
+    }
+  }
+  .nxt{
+    .c1icon{
+      right: -7px;
+      background-position: -150px -75px;
+    }
+  }
+}

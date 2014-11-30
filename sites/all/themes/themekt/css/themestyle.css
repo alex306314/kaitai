@@ -95,17 +95,17 @@
 }
 .slide .cycle-pager span:hover,
 .slide .cycle-pager span.cycle-pager-active {
-  background: #d11b1b;
+  background: #D11B1B;
 }
 .footer {
   background: url(../images/foot.jpg) repeat-x center 0 transparent;
   padding: 15px 0 20px 0;
-  color: #666666;
+  color: #666;
   line-height: 24px;
   text-align: center;
 }
 .footer a {
-  color: #666666;
+  color: #666;
 }
 .footer a:hover {
   color: #e21d2e;
@@ -153,8 +153,8 @@
   height: 36px;
   line-height: 36px;
   display: block;
-  border-bottom: 4px solid #00a779;
-  color: #333333;
+  border-bottom: 4px solid #00A779;
+  color: #333;
   padding-left: 15px;
 }
 .block-ktmodule .c {
@@ -173,10 +173,10 @@
   width: 284px;
   overflow: hidden;
   border-bottom: 1px dotted #d9d9d9;
-  color: dimgray;
+  color: #696969;
 }
 .block-ktmodule .c li a {
-  color: dimgray;
+  color: #696969;
   font-size: 12px;
   display: block;
 }
@@ -310,7 +310,7 @@
   display: block;
   width: 182px;
   float: left;
-  color: dimgray;
+  color: #696969;
   margin-bottom: 10px;
 }
 .tjslide .item a:hover {
@@ -341,12 +341,12 @@
   margin: 25px;
   float: left;
   font-size: 14px;
-  color: dimgray;
+  color: #696969;
   line-height: 23px;
 }
 .blkcomintrocc .introcw p {
   font-size: 14px;
-  color: dimgray;
+  color: #696969;
   line-height: 23px;
 }
 .blkcomintrocc .introcw .comimg {
@@ -373,7 +373,7 @@
 .blkzxgy .tjslide .item .imgt {
   width: 279px;
   height: 91px;
-  background: #333333;
+  background: #333;
   padding: 0;
 }
 .blkzxgy .tjslide .item .imgt h4 {
@@ -459,8 +459,8 @@
 }
 .pager li {
   display: inline-block;
-  background-color: white;
-  border: 1px solid #dddddd;
+  background-color: #fff;
+  border: 1px solid #ddd;
   color: #428bca;
   line-height: 1.42857;
   margin: 0 -3px;
@@ -477,7 +477,7 @@
   padding: 6px 12px;
   background-color: #428bca;
   border-color: #428bca;
-  color: white;
+  color: #fff;
 }
 .pager li.pager-ellipsis {
   padding: 6px 12px;
@@ -491,7 +491,7 @@
   float: left;
 }
 .banner_gonggao {
-  border: 1px solid gainsboro;
+  border: 1px solid #dcdcdc;
   height: 52px;
 }
 .banner_gonggao .ti {
@@ -520,5 +520,154 @@
   height: 52px;
   line-height: 52px;
   width: 910px;
-  padding-right: 200px;
+}
+.prodetailb .l {
+  float: left;
+  width: 260px;
+  margin: 30px 0 0 30px;
+}
+.prodetailb .s1 {
+  width: 260px;
+  height: 196px;
+  position: relative;
+}
+.prodetailb .s1 .cycle-slide {
+  width: 260px;
+  height: 196px;
+}
+.prodetailb .s1.hover .movehover {
+  display: block;
+}
+.prodetailb .s1.hover .hoverbig {
+  display: block;
+}
+.prodetailb .movehover {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed #000;
+  top: 10px;
+  left: 10px;
+  background: #555;
+  opacity: 0.5;
+  z-index: 1000;
+  display: none;
+}
+.prodetailb .hoverbig {
+  position: absolute;
+  width: 350px;
+  height: 260px;
+  top: 0;
+  right: -360px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+}
+.prodetailb .hoverbig img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.prodetailb .r {
+  float: left;
+  width: 300px;
+  margin: 30px 0 0 30px;
+}
+.cycle-slideshow1 {
+  width: 260px;
+  height: 196px;
+  overflow: hidden;
+}
+.cycle-slideshow1 img {
+  width: 260px;
+  height: 196px;
+}
+#slideshow-2 {
+  width: 260px;
+  height: 54px;
+  margin-top: 10px;
+}
+#slideshow-2 .cyclside2w {
+  width: 223px;
+  height: 56px;
+  overflow: hidden;
+  float: left;
+  margin-top: -1px;
+}
+#slideshow-2 .cycle-slideshow1 {
+  width: 223px;
+  height: 56px;
+  overflow: hidden;
+  float: left;
+}
+#slideshow-2 .cycle-slideshow1 div {
+  width: 72px;
+  height: 53px;
+  border: 1px solid transparent;
+}
+#slideshow-2 .cycle-slideshow1 div img {
+  width: 72px;
+  height: 53px;
+}
+#slideshow-2 .cycle-slideshow1 div.cycle-slide-active {
+  border-color: #e21d2e;
+}
+#slideshow-2 .ctl {
+  display: block;
+  float: left;
+  width: 18px;
+  height: 54px;
+  background: #8f8f8f;
+  color: white;
+  text-align: center;
+  line-height: 54px;
+}
+#slideshow-2 .ctl:hover {
+  color: #e21d2e;
+}
+#slideshow-2 .cycle-next {
+  float: right;
+}
+.prodedes td {
+  height: 22px;
+  font-size: 12px;
+  color: #333;
+  padding-left: 10px;
+}
+.prodedes .pt {
+  text-align: right;
+  padding: 0;
+}
+.nxtpre {
+  float: left;
+  margin: 24px 0 0 60px;
+}
+.nxtpre .i {
+  background-color: #51b600;
+  color: white;
+  display: block;
+  float: left;
+  font-size: 12px;
+  height: 23px;
+  line-height: 23px;
+  margin-right: 10px;
+  position: relative;
+  text-align: center;
+  width: 76px;
+}
+.nxtpre .c1icon {
+  background-position: -190px -75px;
+  height: 23px;
+  position: absolute;
+  top: 0;
+  width: 7px;
+}
+.nxtpre .pre .c1icon {
+  left: -7px;
+}
+.nxtpre .nxt .c1icon {
+  right: -7px;
+  background-position: -150px -75px;
 }

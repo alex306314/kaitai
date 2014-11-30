@@ -28,8 +28,11 @@ function kt_get_products($a='')
 
   if($type == 'n'){ //显示指定产品
     $node = node_load($id);
-    echo "<pre>";
-    var_dump($node);exit;
+    drupal_set_title($node->title);
+   // echo "<pre>";
+   // var_dump($node);exit;
+
+
     $data = array(
       'nid' => $id,
     );
