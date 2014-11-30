@@ -11,6 +11,9 @@
   background: url(../images/top.jpg) repeat-x 0 0 transparent;
   height: 95px;
 }
+.clear30 {
+  height: 30px;
+}
 .site_name {
   float: left;
   margin-top: 15px;
@@ -670,4 +673,41 @@
 .nxtpre .nxt .c1icon {
   right: -7px;
   background-position: -150px -75px;
+}
+.btitle {
+  height: 39px;
+  line-height: 39px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+}
+.btitle .tit {
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.pro_de_des .desin {
+  margin: 30px 35px;
+  color: #696969;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 24px;
+  text-indent: 0;
+}
+.pro_de_des .desin p,
+.pro_de_des .desin span,
+.pro_de_des .desin a,
+.pro_de_des .desin div,
+.pro_de_des .desin li {
+  color: #696969;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 24px;
+  text-indent: 0;
+}
+.pro_de_des .desin img {
+  margin: 10px 0;
+  max-width: 500px;
+  *width: 400px;
 }
