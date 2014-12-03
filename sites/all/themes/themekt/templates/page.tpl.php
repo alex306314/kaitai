@@ -51,7 +51,9 @@
           <h2 class="block__title page__title block-title"><?php print $title; ?></h2>
         <?php endif; ?>
         <div class="cwrap clearfix">
-          <?php print render($tabs); ?>
+          <div class="ptabsw">
+            <?php print render($tabs); ?>
+          </div>
           <?php print render($page['content']); ?>
         </div>
       </div>

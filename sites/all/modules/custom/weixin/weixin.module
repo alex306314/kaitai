@@ -1,0 +1,46 @@
+<?php
+include_once __DIR__. "/config.php";
+include_once __DIR__. "/functions.php";
+include_once __DIR__ . "/WeChat.php";
+
+/**
+ * hook_theme
+ */
+
+function weixin_theme(){
+  return array(
+    'weixin' => array(//微信首页
+      'template' => "templates/weixin",
+      'variables' => array('images' => null, ),
+    ),
+  );
+}
+
+
+
+/**
+ * hook_menu
+ */
+
+function weixin_menu(){
+  $item = array();
+  $items['wx'] = array(
+    'title' => '微信',
+    'page callback' => 'weixin_index',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'weixin.pages.inc',
+  );
+  $items['wx/access_token'] = array(
+    'title' => '微信',
+    'page callback' => 'weixin_get_access_token',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'weixin.pages.inc',
+  );
+
+
+  return $items;
+}

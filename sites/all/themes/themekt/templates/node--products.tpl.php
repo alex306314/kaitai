@@ -1,4 +1,3 @@
-<?php if($node){ ?>
 <div class="c clearfix">
   <div class="prodetailb clearfix">
     <div class="l">
@@ -122,35 +121,37 @@
   </div>
   <div class="b prodct_relateted blkzxgy  clearfix aboutsell">
     <div class="tjslidew clearfix">
-    <div class="tjslide myslide clearfix"
-         data-cycle-slides="> .item"
-         data-cycle-fx="carousel"
-         data-cycle-pause-on-hover="true"
-         data-cycle-speed="1000"
-         data-cycle-timeout="2000"
-         data-cycle-carousel-visible="3"
-      >
-      <?php for($i=0;$i<4;$i++){ ?>
-      <div class="item">
-        <a class="a1" href="#">
-          <span class="imgw"><img alt="" src="http://www.pvc123.com/file/upload/201309/22/23-00-10-36-1575581.jpg"></span>
+      <div class="tjslide myslide clearfix"
+           data-cycle-slides="> .item"
+           data-cycle-fx="carousel"
+           data-cycle-pause-on-hover="true"
+           data-cycle-speed="1000"
+           data-cycle-timeout="2000"
+           data-cycle-carousel-visible="3"
+        >
+        <?php for($i=0;$i<4;$i++){ ?>
+          <div class="item">
+            <a class="a1" href="#">
+              <span class="imgw"><img alt="" src="http://www.pvc123.com/file/upload/201309/22/23-00-10-36-1575581.jpg"></span>
           <span class="imgt">
             <h4>模具控温机 油式模具加热机 水式加热控温机</h4>
             <p class="des">重庆PC/ABS合金供应商 限电风潮会影成为行业内热议的话题。限电风潮会影响塑料行业吗，寒冬腊月将近“限电风潮”再次席卷全国，成为行业内热议的话题。限电措施在多个省</p>
           </span>
-        </a>
-        <span class="ibg bgb"></span>
-        <a class="ibg bgt">点击查看</a>
+            </a>
+            <span class="ibg bgb"></span>
+            <a class="ibg bgt">点击查看</a>
+          </div>
+        <?php } ?>
       </div>
-      <?php } ?>
+
     </div>
-
-  </div>
   </div>
 
+  <div class="conlinksw">
+  <?php print render($content['links']); ?>
+  </div>
+  <?php print render($content['comments']); ?>
+
+
 </div>
-<?php }else{ ?>
-<div class="c clearfix">
-  <p>当前产品不存在！</p>
-</div>
-<?php } ?>
+

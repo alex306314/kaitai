@@ -1,0 +1,8 @@
+name = 微信
+description = 微信功能处理.
+package = 微信模块包
+core = 7.x
+php = 5.2
+
+
+files[] = weixin.pages.inc

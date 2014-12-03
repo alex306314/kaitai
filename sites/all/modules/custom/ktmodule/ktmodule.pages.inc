@@ -28,13 +28,15 @@ function kt_get_products($a='')
 
   if($type == 'n'){ //显示指定产品
     $node = node_load($id);
-    drupal_set_title($node->title);
-   // echo "<pre>";
-   // var_dump($node);exit;
+    if($node) drupal_set_title($node->title);
+    echo "<pre>";
+    echo url("node/10");
+    var_dump($node);exit;
 
 
     $data = array(
       'nid' => $id,
+      'node' => $node,
     );
     return theme('product_detail', $data);
   }else{ //显示分类列表
@@ -59,7 +61,7 @@ function kt_get_products($a='')
           'nid' => $n->nid,
           'title' => $n->title,
           'img' => image_style_url('product_list_thumb162x122', $imgItem[0]['uri']),
-          'url' => url("products/n" . $n->nid),
+          'url' => url("node/" . $n->nid),
         );
       }
       pager_default_initialize(300, $perPage);

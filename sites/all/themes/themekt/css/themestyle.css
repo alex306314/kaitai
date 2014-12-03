@@ -566,6 +566,7 @@
   z-index: 1000;
   display: none;
   overflow: hidden;
+  background: #fff;
 }
 .prodetailb .hoverbig img {
   display: block;
@@ -710,4 +711,89 @@
   margin: 10px 0;
   max-width: 500px;
   *width: 400px;
+}
+.prodct_relateted .tjslidew {
+  margin-left: 14px;
+  overflow: hidden;
+}
+.prodct_relateted .tjslide {
+  margin-left: -14px;
+  height: auto;
+  width: 100%;
+}
+.prodct_relateted .tjslide .item {
+  width: 200px;
+  margin-left: 14px;
+}
+.prodct_relateted .tjslide .item .imgw {
+  width: 200px;
+  height: 150px;
+}
+.prodct_relateted .tjslide .item .imgw img {
+  width: 200px;
+  height: 150px;
+}
+.prodct_relateted .tjslide .item .imgt {
+  width: 200px;
+}
+.prodct_relateted .tjslide .item .imgt h4:hover {
+  color: #e21d2e;
+}
+.prodct_relateted .tjslide .item .imgt .des {
+  width: auto;
+  margin: 0 14px;
+  white-space: normal;
+}
+.prodct_relateted .tjslide .item:hover .ibg {
+  display: block;
+}
+.prodct_relateted .tjslide a {
+  width: 200px;
+}
+.prodct_relateted .tjslide .ibg {
+  width: 200px;
+  height: 241px;
+  line-height: 241px;
+}
+.cwrap {
+  position: relative;
+}
+.ptabsw {
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+.ptabsw .tabs {
+  display: block;
+}
+.ptabsw .tabs li {
+  display: block;
+  float: left;
+}
+.ptabsw .tabs li a {
+  padding: 6px 10px;
+  margin-left: -1px;
+  display: block;
+  border: 1px solid #ccc;
+  background: #E0DEDE;
+  color: #333;
+}
+.ptabsw .tabs li a:hover {
+  color: #e21d2e;
+}
+.ptabsw .tabs li.is-active a {
+  border-color: #00A779;
+  background: #00a779;
+  color: white;
+}
+.block-ktmodule .comments {
+  margin: 0 15px;
+}
+.block-ktmodule .comments .links li {
+  float: left;
+  height: auto;
+  line-height: 14px;
+  padding: 0;
+  width: auto;
+  border: 0;
 }
