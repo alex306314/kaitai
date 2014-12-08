@@ -21,13 +21,14 @@ define([
     // 为了增加这个例子的一点无聊趣味性，增加一个计数器
     count: 0,
     initialize: function () {
-      _.bindAll(this, "show", "shakeInit", "deviceMotionHandler", "shakeHandle");
+      _.bindAll(this, "show", "shakeInit", "deviceMotionHandler", "shakeHandle", "showInfo");
     },
     events: {},
     render: function () {
 
     },
     show: function () {
+      var self = this;
       var $oldPage = $(".page.active");
       var $newPage = this.$el;
       $newPage.css({
@@ -35,11 +36,13 @@ define([
       }).addClass("active").animate({
         marginLeft: 0
       }, 400, "linear");
+
       $oldPage.animate({
         marginLeft: "-" + $oldPage.width() + "px"
       }, 400, "linear", function () {
         $oldPage.removeClass("active");
       });
+      this.shakeInit();
     },
     shakeInit: function () {
       if (window.DeviceMotionEvent) {
@@ -49,6 +52,7 @@ define([
         // 移动浏览器不支持运动传感事件
         $("#yaoyiyaono").show();
       }
+      this.shakeHandle();
     },
     deviceMotionHandler: function (eventData) {
       // 获取含重力的加速度
@@ -93,10 +97,28 @@ define([
       }
       wx.ajax({
         data: data,
-        success: function(data){
-          console.log(data);
+        success: function(d){
+          console.log(d);
+          if(d.state){
+            //console.log(data);
+          }else{
+            self.showInfo(d.msg);
+          }
         }
       });
+    },
+    //显示提示信息
+    showInfo: function(info){
+      var html = '<div class="infordiv" style="margin:20px;height: 30px;position: absolute, bottom:0;color:#2c2c2c;background: greenyellow">';
+      html += '</div>';
+      $(".pagew").append(html);
+      $(".infordiv").stop(true,false).animate({
+        bottom: "50px"
+      },300, "linear", function(){
+        setTimeout(function(){
+          $(".infordiv").remove();
+        }, 400);
+      })
     }
 
   });

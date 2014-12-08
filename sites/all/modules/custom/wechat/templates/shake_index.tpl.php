@@ -31,6 +31,7 @@
 <div class="page page_shake" id="page_shake">
   <div class="content">
     <div class="pic_yao"></div>
+    <div id="yaoyiyaono" style="font-size:20px;margin:10px;line-height:35px;display:none;">当前游戏器不支持游戏功能！</div>
   </div>
 </div>
 

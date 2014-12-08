@@ -166,33 +166,49 @@ function wechat_shake_index(){
  */
 function wechat_shake_handle()
 {
+  module_load_include('php', 'wechat', 'ShakeGame.class');
+  $shakeGame = new ShakeGame();
+
   switch($_REQUEST['action']){
     case "playerJoin":
       $name = trim($_POST['name']);
       $phone = trim($_POST['phone']);
-      $time = time();
-      $sid = db_insert('wechat_shake')
-        -> fields(array(
-          'name' => $name,
-          'phone' => $phone,
-          'shake_times' => 0,
-          'first_shake_at' => 0,
-          'created_at' => $time,
-          'updated_at' => $time,
-        ))
-        -> execute();
-      $data = [
-        'sid' => $sid,
-      ];
+
+      if($name=='' || $phone == ''){
+        $data = [
+          'state'=> 0,
+          'msg' => '输入信息有误！',
+        ];
+      }else{
+        $sid = $shakeGame->addUser($name, $phone);
+        $data = [
+          'state'=> 1,
+          'msg' => [
+            'sid' => $sid,
+          ],
+        ];
+      }
       echo json_encode($data);
       break;
     case "userShaked":
+      $isFirstShake = intval($_POST['firstShake']);
+      $sid = intval($_POST['sid']);
+      $result = "游戏还未开始！";
+      if($shakeGame->isStarted()){
+        $result = $shakeGame->update($sid, $isFirstShake);
+      }
 
+      $data = array(
+        'state' => 1,
+        'msg' => $result,
+      );
+      echo json_encode($data);
       break;
     default:
       echo 'Request failed!';
   }
 }
+
 
 /**
  * 获取js路径

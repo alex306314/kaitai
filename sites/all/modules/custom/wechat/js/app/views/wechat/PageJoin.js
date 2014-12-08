@@ -29,9 +29,14 @@ define([
           name: name,
           phone: phone
         },
-        success: function(data){
-          wx.sid = data.sid;
-          wx.pageShake.show();
+        success: function(d){
+          if(d.state){
+            var data = d.msg;
+            wx.sid = data.sid;
+            wx.pageShake.show();
+          }else{
+            self.$el.find(".form_info").html(d.msg);
+          }
         }
       });
     },
