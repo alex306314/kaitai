@@ -78,7 +78,6 @@ function wechat_admin_config_submit($form, &$form_state){
   variable_set('wechat_config_token', $form_state['values']['config_token']);
   variable_set('wechat_config_appid', $form_state['values']['config_appid']);
   variable_set('wechat_config_appsecret', $form_state['values']['config_appsecret']);
-
 }
 
 function wechat_admin_default_message_submit($form, &$form_state){

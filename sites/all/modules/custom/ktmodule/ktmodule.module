@@ -67,6 +67,10 @@ function ktmodule_block_info() {
   return $blocks;
 }
 
+function kttesttest(){
+  echo 1;exit;
+}
+
 /**
  * hook_block_view()
  */

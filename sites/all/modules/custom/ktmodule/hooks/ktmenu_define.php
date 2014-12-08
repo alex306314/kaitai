@@ -67,4 +67,11 @@ $items['aboutus'] = array(
   'weight' => 10,
   'file' => 'ktmodule.pages.inc',
   );
+$items['test'] = array(
+  'title' => '关于我们',
+  'page callback' => 'kttesttest',
+  'access arguments' => array('access content'),
+  'type' => MENU_CALLBACK,
+
+);
 return $items;

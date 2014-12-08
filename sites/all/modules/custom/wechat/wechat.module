@@ -1,5 +1,16 @@
 <?php
 
+
+function wechat_theme()
+{
+  return array(
+    'shake_index' => array(//页面轮播图模板
+      'template' => "templates/shake_index",
+      'variables' => array(),
+    ),
+  );
+}
+
 /**
  * hook menu
  */
@@ -32,6 +43,28 @@ function wechat_menu(){
     'page callback' => 'wechat_main_page',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
+    'file' => 'wechat.pages.inc',
+  );
+  $items['wechat/getToken'] = array(
+    'title' => 'access token',
+    'page callback' => 'wechat_get_access_token1',
+    'access arguments' => true,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'wechat.pages.inc',
+  );
+  $items['wechat/qr/%'] = array(
+    'title' => 'access token',
+    'page callback' => 'wechat_get_qr',
+    'page arguments' => array(3),
+    'access arguments' => true,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'wechat.pages.inc',
+  );
+  $items['wechat/shake'] = array(
+    'title' => '摇一摇',
+    'page callback' => 'wechat_shake_index',
+    'access arguments' => true,
+    'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
   return $items;
@@ -198,13 +231,13 @@ function _wechat_get_access_token(){
   $access_token = variable_get('wechat_access_token');
   $token_expires = variable_get('wechat_token_expires', 0);
   if($access_token && time() < $token_expires){
-    return $access_token['value'];
+  //  return $access_token['value'];
   }
   $weObj = _wechat_init_obj();
   $access_token = $weObj->checkAuth();
   if($access_token){
     variable_set('wechat_access_token', $access_token);
-    variable_set('wechat_token_expires', time()+1200);
+    variable_set('wechat_token_expires', time()+7200);
   }
   return $access_token;
 }

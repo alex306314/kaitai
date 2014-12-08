@@ -18,7 +18,7 @@ function wechat_main_page(){
           break;
         }
   	    else if($event['event']=='subscribe'){
-  	      $weObj->text(variable_get("wechat_follow_message", variable_get("wechat_default_message", 'Hi, WeChat!')));
+  	      $weObj->text('my test content');
   	    }
         else if($event['event']=='CLICK'){
           $message = _wechat_menu_default_message($event);
@@ -28,7 +28,8 @@ function wechat_main_page(){
     }
   }
   if(!is_array($weObj->Message(''))){
-    $weObj->text(variable_get("wechat_default_message", "Hi, WeChat!"));
+    //$weObj->text(variable_get("wechat_default_message", "test content2"));
+    $weObj->text("test content 2");
   }
   $weObj->reply();
   exit;
@@ -125,4 +126,52 @@ function _wechat_menu_default_message($event){
     }
   }
   return '';
+}
+
+function wechat_get_access_token1(){
+  echo _wechat_get_access_token();
+  exit;
+}
+
+function wechat_get_qr($scene_id){
+  echo "<pre>";
+  echo $scene_id. "<br>";
+  $weObj = _wechat_init_obj();
+  $data = $weObj->getQRCode($scene_id);
+  var_dump($data);exit;
+  //echo $weObj->getQRUrl();
+}
+
+function wechat_shake_index(){
+
+  global $base_url;
+  $jscss = '<link rel="stylesheet" href="'. wechat_attach_css('common') .'">';
+  $jscss .= '<link rel="stylesheet" href="'. wechat_attach_css('wechat') .'">';
+  $jscss .= '<script>window.lib_url="'. $base_url."/".drupal_get_path('module','wechat')."/js/lib/" .'"</script>';
+  $jscss .= '<script data-main="'. wechat_attach_js('wechat_shake') .'" src="'
+    . wechat_attach_js('require', 'js/lib/requirejs') .'"></script>';
+
+
+  $data = array(
+    'jscss' => $jscss,
+  );
+  return theme('shake_index',$data);
+}
+
+/**
+ * 获取js路径
+ * @param $file
+ *
+ * @param string $dir
+ * @return string
+ */
+function wechat_attach_js($file, $dir='js')
+{
+  global $base_url;
+  return $base_url.'/'.ctools_attach_js($file, 'wechat', $dir);
+}
+function wechat_attach_css($file, $dir='css')
+{
+  global $base_url;
+  return $base_url.'/'.ctools_attach_css($file, 'wechat', $dir);
 }
