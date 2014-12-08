@@ -159,6 +159,14 @@ function wechat_shake_index(){
 }
 
 /**
+ *
+ */
+function wechat_shake_handle()
+{
+  var_dump($_REQUEST);
+}
+
+/**
  * 获取js路径
  * @param $file
  *

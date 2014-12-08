@@ -1,6 +1,6 @@
 <?php
 
-class WeChat
+class WeChat1
 {
 
   public function a(){

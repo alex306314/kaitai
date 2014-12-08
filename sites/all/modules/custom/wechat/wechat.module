@@ -67,6 +67,13 @@ function wechat_menu(){
     'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
+  $items['wechat/handle'] = array(
+    'title' => '微信数据处理接口',
+    'page callback' => 'wechat_shake_handle',
+    'access arguments' => true,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'wechat.pages.inc',
+  );
   return $items;
 }
 
