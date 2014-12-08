@@ -7,7 +7,7 @@ define([
   return Backbone.View.extend({
     el: "#page_join",
     initialize: function(){
-      _.bindAll(this, "join");
+      _.bindAll(this, "join", "show");
     },
     events: {
       "click .btn_join": "join"
@@ -16,6 +16,7 @@ define([
 
     },
     join: function(){
+      var self = this;
       var name = this.$el.find(".ipt_name").val();
       var phone = this.$el.find(".ipt_phone").val();
       if(name=="" || phone==""){
@@ -29,8 +30,23 @@ define([
           phone: phone
         },
         success: function(data){
-          console.log(data);
+          wx.sid = data.sid;
+          wx.pageShake.show();
         }
+      });
+    },
+    show: function(){
+      var $oldPage = $(".page.active");
+      var $newPage = this.$el;
+      $newPage.css({
+        marginLeft: $oldPage.width() + "px"
+      }).addClass("active").animate({
+        marginLeft: 0
+      }, 400, "linear");
+      $oldPage.animate({
+        marginLeft: "-" + $oldPage.width() + "px"
+      }, 400, "linear",function(){
+        $oldPage.removeClass("active");
       });
     }
 

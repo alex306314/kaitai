@@ -170,7 +170,24 @@ function wechat_shake_handle()
     case "playerJoin":
       $name = trim($_POST['name']);
       $phone = trim($_POST['phone']);
-      
+      $time = time();
+      $sid = db_insert('wechat_shake')
+        -> fields(array(
+          'name' => $name,
+          'phone' => $phone,
+          'shake_times' => 0,
+          'first_shake_at' => 0,
+          'created_at' => $time,
+          'updated_at' => $time,
+        ))
+        -> execute();
+      $data = [
+        'sid' => $sid,
+      ];
+      echo json_encode($data);
+      break;
+    case "userShaked":
+
       break;
     default:
       echo 'Request failed!';

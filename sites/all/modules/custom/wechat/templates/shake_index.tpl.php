@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<div class="pagew">
+
 <div class="page page_join active" id="page_join">
   <div class="content">
     <div class="formw">
@@ -28,8 +30,10 @@
 
 <div class="page page_shake" id="page_shake">
   <div class="content">
-
+    <div class="pic_yao"></div>
   </div>
+</div>
+
 </div>
 
 </body>

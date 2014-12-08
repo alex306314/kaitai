@@ -5,7 +5,7 @@ define([
   'domReady!'
 ], function($, PageJoin, PageShake){
   window.wx = window.wx || {};
-  wx.firstShake = 1;
+  wx.sid = 0;    //当前摇奖者ID
 
   wx.pageJoin = new PageJoin();
   wx.pageShake = new PageShake();
@@ -26,10 +26,16 @@ define([
   };
 
 
+
   function setPageDimension(){
     var maxWidth = 640;
+    var w = $(window).width() > maxWidth ? maxWidth : $(window).width();
     $('.page').css({
-      width: ($(window).width() > maxWidth ? maxWidth : $(window).width()) + "px",
+      width: w + "px",
+      height: $(window).height() + "px"
+    });
+    $('.pagew').css({
+      width: w + "px",
       height: $(window).height() + "px"
     });
   }
