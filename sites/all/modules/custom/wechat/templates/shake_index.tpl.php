@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="page page_join" id="page_join">
+<div class="page page_join active" id="page_join">
   <div class="content">
     <div class="formw">
       <div class="form_control">

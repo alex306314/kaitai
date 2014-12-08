@@ -22,7 +22,16 @@ define([
         this.$el.find(".form_info").html("请正确输入正确的信息");
         return;
       }
-
+      wx.ajax({
+        data: {
+          action: "playerJoin",
+          name: name,
+          phone: phone
+        },
+        success: function(data){
+          console.log(data);
+        }
+      });
     }
 
   });

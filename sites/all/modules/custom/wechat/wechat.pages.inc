@@ -143,11 +143,14 @@ function wechat_get_qr($scene_id){
 }
 
 function wechat_shake_index(){
-
   global $base_url;
+  $lib_url = $base_url."/".drupal_get_path('module','wechat')."/js/lib/";
+  $handle_url = $base_url."/wechat/handle";
+
   $jscss = '<link rel="stylesheet" href="'. wechat_attach_css('common') .'">';
   $jscss .= '<link rel="stylesheet" href="'. wechat_attach_css('wechat') .'">';
-  $jscss .= '<script>window.lib_url="'. $base_url."/".drupal_get_path('module','wechat')."/js/lib/" .'"</script>';
+  $jscss .= '<script>window.lib_url="'. $lib_url .'"</script>';
+  $jscss .= '<script>window.handle_url="'. $handle_url .'"</script>';
   $jscss .= '<script data-main="'. wechat_attach_js('wechat_shake') .'" src="'
     . wechat_attach_js('require', 'js/lib/requirejs') .'"></script>';
 
@@ -159,11 +162,19 @@ function wechat_shake_index(){
 }
 
 /**
- *
+ * 数据处理
  */
 function wechat_shake_handle()
 {
-  var_dump($_REQUEST);
+  switch($_REQUEST['action']){
+    case "playerJoin":
+      $name = trim($_POST['name']);
+      $phone = trim($_POST['phone']);
+      
+      break;
+    default:
+      echo 'Request failed!';
+  }
 }
 
 /**
