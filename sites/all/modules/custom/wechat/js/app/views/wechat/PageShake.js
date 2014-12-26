@@ -52,7 +52,6 @@ define([
         // 移动浏览器不支持运动传感事件
         $("#yaoyiyaono").show();
       }
-      this.shakeHandle();
     },
     deviceMotionHandler: function (eventData) {
       // 获取含重力的加速度
@@ -86,6 +85,7 @@ define([
       }
     },
     shakeHandle: function(){
+      var self = this;
       var data = {
         action: "userShaked",
         firstShake : 0,
@@ -98,9 +98,10 @@ define([
       wx.ajax({
         data: data,
         success: function(d){
-          console.log(d);
+          //console.log(d);
           if(d.state){
             //console.log(data);
+            self.showInfo(d.msg);
           }else{
             self.showInfo(d.msg);
           }
@@ -109,9 +110,12 @@ define([
     },
     //显示提示信息
     showInfo: function(info){
-      var html = '<div class="infordiv" style="margin:20px;height: 30px;position: absolute, bottom:0;color:#2c2c2c;background: greenyellow">';
+      $(".infordiv").remove();
+      var html = '<div class="infordiv" style="margin:20px;height: 30px;position: absolute, bottom:0;color:#2c2c2c;' +
+        'background: #114C01;line-height:30px;text-align:center;color:white;border-radius:3px;box-shadow:2px 3px 3px #000">';
+      html += info;
       html += '</div>';
-      $(".pagew").append(html);
+      $(".pagew .page").append(html);
       $(".infordiv").stop(true,false).animate({
         bottom: "50px"
       },300, "linear", function(){

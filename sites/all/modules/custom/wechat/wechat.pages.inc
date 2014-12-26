@@ -143,22 +143,43 @@ function wechat_get_qr($scene_id){
 }
 
 function wechat_shake_index(){
+
+
+  $jscss = wechat_generate_jscss();
+//  $data = array(
+//    'jscss' => $jscss,
+//  );
+  //return theme('shake_index',$data);
+  include __DIR__."/templates/shake_index.tpl.php";
+}
+
+
+
+/**
+ * 后台操作
+ */
+function wechat_shake_list()
+{
+  global $base_url;
+  $module_url = $base_url."/".drupal_get_path('module','wechat');
+  $jscss = wechat_generate_jscss();
+  include __DIR__."/templates/shake_list.tpl.php";
+}
+
+function wechat_generate_jscss()
+{
   global $base_url;
   $lib_url = $base_url."/".drupal_get_path('module','wechat')."/js/lib/";
   $handle_url = $base_url."/wechat/handle";
 
   $jscss = '<link rel="stylesheet" href="'. wechat_attach_css('common') .'">';
   $jscss .= '<link rel="stylesheet" href="'. wechat_attach_css('wechat') .'">';
-  $jscss .= '<script>window.lib_url="'. $lib_url .'"</script>';
-  $jscss .= '<script>window.handle_url="'. $handle_url .'"</script>';
+  $jscss .= '<script>window.lib_url="'. $lib_url .'";';
+  $jscss .= 'window.COUNT_DOWN=' . COUNT_DOWN . ';';
+  $jscss .= 'window.handle_url="'. $handle_url .'"</script>';
   $jscss .= '<script data-main="'. wechat_attach_js('wechat_shake') .'" src="'
     . wechat_attach_js('require', 'js/lib/requirejs') .'"></script>';
-
-
-  $data = array(
-    'jscss' => $jscss,
-  );
-  return theme('shake_index',$data);
+  return $jscss;
 }
 
 /**
@@ -194,14 +215,15 @@ function wechat_shake_handle()
       $isFirstShake = intval($_POST['firstShake']);
       $sid = intval($_POST['sid']);
       $result = "游戏还未开始！";
+      $data = array(
+        'state' => 0,
+        'msg' => $result,
+      );
       if($shakeGame->isStarted()){
         $result = $shakeGame->update($sid, $isFirstShake);
       }
 
-      $data = array(
-        'state' => 1,
-        'msg' => $result,
-      );
+      $data['msg'] = $result;
       echo json_encode($data);
       break;
     default:

@@ -23,6 +23,11 @@ define([
         this.$el.find(".form_info").html("请正确输入正确的信息");
         return;
       }
+      var $btn =this.$el.find(".btn_join");
+      if($btn.hasClass("clicked")){
+        return;
+      }
+      $btn.addClass("clicked").html("数据提交中…");
       wx.ajax({
         data: {
           action: "playerJoin",
@@ -30,6 +35,7 @@ define([
           phone: phone
         },
         success: function(d){
+          $btn.removeClass("clicked").html("加入游戏");
           if(d.state){
             var data = d.msg;
             wx.sid = data.sid;

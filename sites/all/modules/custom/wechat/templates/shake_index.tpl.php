@@ -2,10 +2,13 @@
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="user-scalable=no,height=device-height,width =device-width," name="viewport">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <?php if(isset($jscss)){ echo $jscss; }?>
   <title>shake</title>
 </head>
-<body>
+<body class="pageindexbody">
 
 <div class="pagew">
 
@@ -18,10 +21,10 @@
       <div class="form_control">
         <input class="ipt_phone" placeholder="请输入手机号" type="text"/>
       </div>
-      <div class="form_control">
+      <div class="form_control inforw">
         <p class="form_info"></p>
       </div>
-      <div class="form_control">
+      <div class="form_control btnw">
         <button class="btn_join">加入游戏</button>
       </div>
     </div>

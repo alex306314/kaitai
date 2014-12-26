@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__ . "/config.php";
+
 
 function wechat_theme()
 {
@@ -41,14 +43,14 @@ function wechat_menu(){
   $items['wechat'] = array(
     'title' => 'Wechat',
     'page callback' => 'wechat_main_page',
-    'access arguments' => array('access content'),
+    'access callback' => TRUE,
     'type' => MENU_CALLBACK,
     'file' => 'wechat.pages.inc',
   );
   $items['wechat/getToken'] = array(
     'title' => 'access token',
     'page callback' => 'wechat_get_access_token1',
-    'access arguments' => true,
+    'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
@@ -56,21 +58,28 @@ function wechat_menu(){
     'title' => 'access token',
     'page callback' => 'wechat_get_qr',
     'page arguments' => array(3),
-    'access arguments' => true,
+    'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
   $items['wechat/shake'] = array(
     'title' => '摇一摇',
     'page callback' => 'wechat_shake_index',
-    'access arguments' => true,
+    'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
   $items['wechat/handle'] = array(
     'title' => '微信数据处理接口',
     'page callback' => 'wechat_shake_handle',
-    'access arguments' => true,
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'wechat.pages.inc',
+  );
+  $items['wechat/list'] = array(
+    'title' => '摇一摇列表',
+    'page callback' => 'wechat_shake_list',
+    'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
     'file' => 'wechat.pages.inc',
   );
