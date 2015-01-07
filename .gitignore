@@ -9,3 +9,4 @@ sites/default/ctools/*
 sites/default/product_images/*
 sites/default/styles/*
 .idea/*
+!/sites/default/backup_migrate/
